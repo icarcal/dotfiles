@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker zsh-autosuggestions)
 
 # User configuration
 
@@ -80,12 +80,14 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
-alias hsvm="ssh vagrant@127.0.0.1 -p 2222"
+alias zshconfig="sudo nano ~/.zshrc"
+alias ohmyzsh="sudo nano ~/.oh-my-zsh"
 alias artisan="php artisan"
-alias vup="vagrant up"
-alias vssh="vagrant ssh"
+alias dc="docker-compose"
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias de="docker exec -it"
+alias dps="docker ps --format 'table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Size}}'"
 
 export PATH=~/.composer/vendor/bin:/usr/local/mysql/bin:$PATH
 
